@@ -12,35 +12,35 @@
 
 function speedlimithighlight_bootstrap()
 {
-	var bGreasemonkeyServiceDefined     = false;
+    var bGreasemonkeyServiceDefined     = false;
 
-	try
-	{
-		if ("object" === typeof Components.interfaces.gmIGreasemonkeyService)
-		{
-			bGreasemonkeyServiceDefined = true;
-		}
-	}
-	catch (err)
-	{
-		//Ignore.
-	}
-	if ( "undefined" === typeof unsafeWindow  ||  ! bGreasemonkeyServiceDefined)
-	{
-		unsafeWindow    = ( function ()
-		{
-			var dummyElem   = document.createElement('p');
-			dummyElem.setAttribute ('onclick', 'return window;');
-			return dummyElem.onclick ();
-		} ) ();
-	}
-	/* begin running the code! */
-	speedlimithighlight_init();
+    try
+    {
+        if ("object" === typeof Components.interfaces.gmIGreasemonkeyService)
+        {
+            bGreasemonkeyServiceDefined = true;
+        }
+    }
+    catch (err)
+    {
+        //Ignore.
+    }
+    if ( "undefined" === typeof unsafeWindow  ||  ! bGreasemonkeyServiceDefined)
+    {
+        unsafeWindow    = ( function ()
+        {
+            var dummyElem   = document.createElement('p');
+            dummyElem.setAttribute ('onclick', 'return window;');
+            return dummyElem.onclick ();
+        } ) ();
+    }
+    /* begin running the code! */
+    speedlimithighlight_init();
 }
 
 function speedlimithighlight_init()
 {
-	//run your code here
+    //run your code here
 }
 
 speedlimithighlight_bootstrap();
